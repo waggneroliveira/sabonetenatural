@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import vue from '@vitejs/plugin-vue';
+import path from 'path';
 
 export default defineConfig({
     plugins: [
@@ -43,6 +44,7 @@ export default defineConfig({
     resolve:{
         alias:{
             vue:'vue/dist/vue.esm-bundler.js',
+            '@': path.resolve(__dirname, 'resources/js'),             
         }
     },
     server: {

@@ -1,5 +1,3 @@
 <template>
-    <div class="banner">
-        <img :src="logoPath" alt="Logo">
-    </div>
+    <h2 class="text-red-400">App from vue</h2>
 </template>

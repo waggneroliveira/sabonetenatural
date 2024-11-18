@@ -10,6 +10,8 @@
     
     <div id="app">
         <header-component></header-component>
+
+        <banner-carousel-component></banner-carousel-component>
         
         @yield('content')
     </div>
