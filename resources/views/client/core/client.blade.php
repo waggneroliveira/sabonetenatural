@@ -17,5 +17,20 @@
     </div>
 
     @vite('resources/js/app.js')
+
+    <style scoped>
+        .carousel__pagination-button::after {
+            width: 18px !important;
+            height: 18px !important;
+            border-radius: 50% !important;
+            background-color: #F6FEFB !important;
+        }
+        .carousel__pagination-button--active::after {
+            width: 21px !important;
+            height: 21px !important;
+            border-radius: 50% !important;
+            background-color: #F2F7DE !important;
+        }
+  </style>
 </body>
 </html>

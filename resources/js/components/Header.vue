@@ -12,11 +12,11 @@
                 <!-- Navegação -->
                 <nav>
                     <ul class="flex space-x-5 gap-[35px]">
-                    <li><a href="/" class="text-[#419263] font-bold">Home</a></li>
-                    <li><a href="/sobre" class="text-[#419263] text-[13px]">A Viva</a></li>
-                    <li><a href="/produto" class="text-[#419263] text-[13px]">Produtos</a></li>
-                    <li><a href="/contato" class="text-[#419263] text-[13px]">Contato</a></li>
-                    <li><a href="/revenda" class="text-[#419263] text-[13px]">Quero revender</a></li>
+                    <li><a href="/" class="text-[#419263] font-bold text-[15px]">Home</a></li>
+                    <li><a href="/sobre" class="text-[#419263] text-[15px]">A Viva</a></li>
+                    <li><a href="/produto" class="text-[#419263] text-[15px]">Produtos</a></li>
+                    <li><a href="/contato" class="text-[#419263] text-[15px]">Contato</a></li>
+                    <li><a href="/revenda" class="text-[#419263] text-[15px]">Quero revender</a></li>
                     </ul>
                 </nav>
             </div>
