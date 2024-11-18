@@ -1,7 +1,7 @@
 <template>
   <div class="relative w-full h-screen top-[-107px]">
     <div class="slide relative -z-10 w-full h-[100%] overflow-hidden">
-      <carousel :wrap-around="true" :autoplay="3000" class="rounded-xl h-full">
+      <carousel :wrap-around="true" :autoplay="false" class="rounded-xl h-full">
         <slide v-for="(banner, index) in banners" :key="index">
           <img :src="banner.image" :alt="banner.alt" class="w-full h-full object-cover" />
           <div class="absolute bottom-4 left-4 text-white font-bold text-xl">
