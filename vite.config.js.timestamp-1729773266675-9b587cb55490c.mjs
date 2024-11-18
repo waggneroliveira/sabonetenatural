@@ -1,7 +1,7 @@
 // vite.config.js
-import { defineConfig } from "file:///C:/laragon/www/wagner/new-panel/node_modules/vite/dist/node/index.js";
-import laravel from "file:///C:/laragon/www/wagner/new-panel/node_modules/laravel-vite-plugin/dist/index.js";
-import { viteStaticCopy } from "file:///C:/laragon/www/wagner/new-panel/node_modules/vite-plugin-static-copy/dist/index.js";
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 var vite_config_default = defineConfig({
   plugins: [
     laravel({
