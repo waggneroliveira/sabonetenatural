@@ -20,6 +20,7 @@ use App\Http\Controllers\SettingThemeController;
 use App\Http\Controllers\AuditActivityController;
 use App\Http\Controllers\Auth\PasswordEmailController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\BannerController;
 
 Route::get('painel/', function () {
     return redirect()->route('admin.dashboard.painel');
@@ -82,6 +83,11 @@ Route::prefix('painel/')->group(function () {
         ->parameters(['auditorias'=>'activitie']);
         Route::post('auditorias/{id}/mark-as-read', [AuditActivityController::class, 'markAsRead']);
         Route::post('/auditorias/mark-all-as-read', [AuditActivityController::class, 'markAllAsRead']);
+
+        //BANNER
+        Route::resource('banner', BannerController::class)
+        ->names('admin.dashboard.banner')
+        ->parameters(['banner'=>'banner']);
 
         //E-MAIL CONFIG
         Route::resource('configuracao-de-email', SettingEmailController::class)

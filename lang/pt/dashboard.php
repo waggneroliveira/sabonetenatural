@@ -49,6 +49,7 @@ return [
     "setting_email" => "Configuração de e-mail",
     "security_and_access_control" => "Segurança e Controle de Acesso",
     "audit" => "Auditoria",
+    "banner" => "Banner",
     "group_and_permission" => "Grupos de permissões",
     "users" => "Usuários",
     "btn_create" => "Cadastrar",
