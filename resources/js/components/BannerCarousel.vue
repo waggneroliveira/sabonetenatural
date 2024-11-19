@@ -24,41 +24,41 @@
 </template>
 
 <script>
-import 'vue3-carousel/dist/carousel.css';
-import { Carousel, Slide, Pagination } from 'vue3-carousel';
+  import 'vue3-carousel/dist/carousel.css';
+  import { Carousel, Slide, Pagination } from 'vue3-carousel';
 
-export default {
-  name: "MontaguFontExample",
-  components: {
-    Carousel,
-    Slide,
-    Pagination,
-  },
-  data() {
-    return {
-      banners: [
-        {
-          image: '/build/client/images/banner.png',
-          alt: 'Banner 1',
-          title: '',
-          text: '',
-        },
-        {
-          image: 'https://via.placeholder.com/1200x400/7fbfff/333333?text=Banner+2',
-          alt: 'Banner 2',
-          title: 'Descontos Incríveis!',
-          text: 'Pureza que cuida, natureza que transforma!',
-        },
-        {
-          image: 'https://via.placeholder.com/1200x400/ffb84d/333333?text=Banner+3',
-          alt: 'Banner 3',
-          title: 'Novo Lançamento!',
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ips.',
-        },
-      ],
-    };
-  },
-};
+  export default {
+    name: "MontaguFontExample",
+    components: {
+      Carousel,
+      Slide,
+      Pagination,
+    },
+    data() {
+      return {
+        banners: [
+          {
+            image: '/build/client/images/banner.png',
+            alt: 'Banner 1',
+            title: '',
+            text: '',
+          },
+          {
+            image: 'https://via.placeholder.com/1200x400/7fbfff/333333?text=Banner+2',
+            alt: 'Banner 2',
+            title: 'Descontos Incríveis!',
+            text: 'Pureza que cuida, natureza que transforma!',
+          },
+          {
+            image: 'https://via.placeholder.com/1200x400/ffb84d/333333?text=Banner+3',
+            alt: 'Banner 3',
+            title: 'Novo Lançamento!',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ips.',
+          },
+        ],
+      };
+    },
+  };
 </script>
 
 <style scoped>
