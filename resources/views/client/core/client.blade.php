@@ -11,14 +11,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-red-100">
+    <main>
+        <div id="app">
+            <header-component></header-component>
     
-    <div id="app">
-        <header-component></header-component>
-
-        <banner-carousel-component></banner-carousel-component>
-        
-        @yield('content')
-    </div>
+            <banner-carousel-component></banner-carousel-component>
+            
+            @yield('content')
+        </div>
+    </main>
 
     @vite('resources/js/app.js')
 
