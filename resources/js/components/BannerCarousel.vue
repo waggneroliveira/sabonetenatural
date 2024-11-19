@@ -28,7 +28,7 @@
   import { Carousel, Slide, Pagination } from 'vue3-carousel';
 
   export default {
-    name: "MontaguFontExample",
+    font: "MontaguFontExample",
     components: {
       Carousel,
       Slide,
