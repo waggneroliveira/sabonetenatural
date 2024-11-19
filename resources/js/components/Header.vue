@@ -12,11 +12,11 @@
                 <!-- Navegação -->
                 <nav>
                     <ul class="flex space-x-5 gap-[35px]">
-                    <li><a href="/" class="text-[#419263] font-bold text-[15px]">Home</a></li>
-                    <li><a href="/sobre" class="text-[#419263] text-[15px]">A Viva</a></li>
-                    <li><a href="/produto" class="text-[#419263] text-[15px]">Produtos</a></li>
-                    <li><a href="/contato" class="text-[#419263] text-[15px]">Contato</a></li>
-                    <li><a href="/revenda" class="text-[#419263] text-[15px]">Quero revender</a></li>
+                    <li><a href="/" class="text-[#419263] text-[15px] montagu-slab font-bold">Home</a></li>
+                    <li><a href="/sobre" class="text-[#419263] text-[15px] montagu-slab">A Viva</a></li>
+                    <li><a href="/produto" class="text-[#419263] text-[15px] montagu-slab">Produtos</a></li>
+                    <li><a href="/contato" class="text-[#419263] text-[15px] montagu-slab">Contato</a></li>
+                    <li><a href="/revenda" class="text-[#419263] text-[15px] montagu-slab">Quero revender</a></li>
                     </ul>
                 </nav>
             </div>
@@ -26,12 +26,13 @@
 
 <script>
 export default {
-  name: "Header",
-    data() {
-    return {
-      logoPath: '/build/client/images/sabonete-logo.png', 
-    };
-  },
+    font: "MontaguFontExample",
+    name: "Header",
+        data() {
+        return {
+            logoPath: '/build/client/images/sabonete-logo.png', 
+        };
+    },
 };
 </script>
 
@@ -43,5 +44,10 @@ export default {
     .logo img{
         width: auto;
         height: 53px;
+    }
+    .montagu-slab {
+        font-family: "Montagu Slab", serif;
+        font-optical-sizing: auto;
+        font-style: normal;
     }
 </style>
