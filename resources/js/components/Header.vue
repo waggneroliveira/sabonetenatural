@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-row justify-center mt-12">
+    <div class="flex flex-row justify-center mt-12 relative z-10">
         <header class="bg-white text-white shadow-md rounded-[32px] w-10/12 h-full">
             <div class="container mx-auto flex justify-between items-center content-center px-12 h-full py-3">
                 <!-- Logo -->
