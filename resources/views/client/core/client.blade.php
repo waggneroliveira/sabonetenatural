@@ -13,10 +13,7 @@
 <body class="bg-red-100">
     <main>
         <div id="app">
-            <header-component></header-component>
-    
-            <banner-carousel-component></banner-carousel-component>
-            
+            <header-component></header-component>  
             @yield('content')
         </div>
     </main>

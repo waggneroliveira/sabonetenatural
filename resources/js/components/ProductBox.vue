@@ -1,55 +1,70 @@
 <template>
-  <div class="product-box">
-    <div class="discount">50% off</div>
-    <img :src="product.image" alt="Sushi" class="product-image" />
-    <h3>
-      {{ product.name }} <span>({{ product.japaneseName }})</span>
-    </h3>
-    <p class="description">{{ product.description }}</p>
-    <div class="price-section">
-      <span class="old-price">R$ {{ product.oldPrice }}</span>
-      <span class="new-price">R$ {{ product.newPrice }}</span>
+  <div v-for="(product, index) in products" :key="index">
+    <div class="product-box">
+      <div class="discount">50% off</div>
+      <img :src="product.image" alt="Sushi" class="product-image" />
+      <h3>
+        {{ product.name }} <span>({{ product.japaneseName }})</span>
+      </h3>
+      <p class="description">{{ product.description }}</p>
+      <div class="price-section">
+        <span class="old-price">R$ {{ product.oldPrice }}</span>
+        <span class="new-price">R$ {{ product.newPrice }}</span>
+      </div>
+      <div class="timer">
+        <i class="icon-clock"></i> 10 min
+      </div>
+      <div class="quantity-controls">
+        <button @click="decreaseQuantity(product)">-</button>
+        <span>{{ product.quantity }}</span>
+        <button @click="increaseQuantity(product)">+</button>
+      </div>
+      <button class="action-button" @click="addToCart(product)">Quero!</button>
     </div>
-    <div class="timer">
-      <i class="icon-clock"></i> 10 min
-    </div>
-    <div class="quantity-controls">
-      <button @click="decreaseQuantity">-</button>
-      <span>{{ quantity }}</span>
-      <button @click="increaseQuantity">+</button>
-    </div>
-    <button class="action-button" @click="addToCart">Quero!</button>
   </div>
 </template>
 
 <script>
 export default {
   name: "ProductBox",
-  props: {
-    product: {
-      type: Object,
-      required: true,
-    },
-  },
   data() {
     return {
-      quantity: 1,
+      products: [
+        {
+          name: 'SUSHI TAMAKI',
+          japaneseName: '刺身',
+          description: 'Salmão, camarão panado, queijo creme, cebolinho, olho francês e molho tarê',
+          oldPrice: 79.00,
+          newPrice: 59.00,
+          image: '/build/client/images/sushi.png',
+          quantity: 1,
+        },
+        {
+          name: 'SUSHI TAMAKI 01',
+          japaneseName: '刺身',
+          description: 'Salmão, camarão panado, queijo creme, cebolinho, olho francês e molho tarê',
+          oldPrice: 89.00,
+          newPrice: 69.00,
+          image: '/build/client/images/sushi.png',
+          quantity: 1,
+        },
+      ],
     };
   },
   methods: {
-    increaseQuantity() {
-      this.quantity++;
+    increaseQuantity(product) {
+      product.quantity++;
     },
-    decreaseQuantity() {
-      if (this.quantity > 1) this.quantity--;
+    decreaseQuantity(product) {
+      if (product.quantity > 1) product.quantity--;
     },
-    addToCart() {
-      // Lógica para adicionar o produto ao carrinho
-      alert(`Adicionado ${this.quantity} ${this.product.name}(s) ao carrinho!`);
+    addToCart(product) {
+      alert(`Adicionado ${product.quantity} ${product.name}(s) ao carrinho!`);
     },
   },
 };
 </script>
+
 
 <style scoped>
 .product-box {
