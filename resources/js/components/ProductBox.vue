@@ -1,165 +1,74 @@
 <template>
-  <div v-for="(product, index) in products" :key="index">
-    <div class="product-box">
-      <div class="discount">50% off</div>
-      <img :src="product.image" alt="Sushi" class="product-image" />
-      <h3>
-        {{ product.name }} <span>({{ product.japaneseName }})</span>
-      </h3>
-      <p class="description">{{ product.description }}</p>
-      <div class="price-section">
-        <span class="old-price">R$ {{ product.oldPrice }}</span>
-        <span class="new-price">R$ {{ product.newPrice }}</span>
+    <div class="box-product max-w-[290px] rounded-[32px] overflow-hidden">
+      <div class="image relative">
+        <Carousel v-model:current-slide="currentSlide">
+          <Slide v-for="(item, index) in slides" :key="index">
+            <div class="carousel__item h-[275px]">
+              <div class="tag montagu-slab absolute left-0 top-[35px] px-[15px] py-[6px] bg-[#F2F7DE] rounded-r-[32px] rounded-l-none">
+                <div class="tag__text font-semibold text-[#2FB25E] text-[14px]">{{ slides[currentSlide]?.tag || "" }}</div>
+              </div>
+              <img :src="item.image" :alt="item.alt" class="w-full h-full object-cover" />
+            </div>
+          </Slide>
+
+          <template #addons>
+            <Pagination class="pagination__product">
+            </Pagination>
+          </template>
+        </Carousel>
       </div>
-      <div class="timer">
-        <i class="icon-clock"></i> 10 min
+
+      <div class="description montagu-slab bg-[#F2F7DE] p-8">
+        <div v-html="slides[currentSlide]?.text || ''" class="text-[#2FB25E] text-[12px]"></div>
       </div>
-      <div class="quantity-controls">
-        <button @click="decreaseQuantity(product)">-</button>
-        <span>{{ product.quantity }}</span>
-        <button @click="increaseQuantity(product)">+</button>
-      </div>
-      <button class="action-button" @click="addToCart(product)">Quero!</button>
     </div>
-  </div>
 </template>
 
-<script>
-export default {
-  name: "ProductBox",
-  data() {
-    return {
-      products: [
-        {
-          name: 'SUSHI TAMAKI',
-          japaneseName: '刺身',
-          description: 'Salmão, camarão panado, queijo creme, cebolinho, olho francês e molho tarê',
-          oldPrice: 79.00,
-          newPrice: 59.00,
-          image: '/build/client/images/sushi.png',
-          quantity: 1,
-        },
-        {
-          name: 'SUSHI TAMAKI 01',
-          japaneseName: '刺身',
-          description: 'Salmão, camarão panado, queijo creme, cebolinho, olho francês e molho tarê',
-          oldPrice: 89.00,
-          newPrice: 69.00,
-          image: '/build/client/images/sushi.png',
-          quantity: 1,
-        },
-      ],
-    };
+<script setup>
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Pagination } from 'vue3-carousel';
+import { ref } from 'vue';
+
+const slides = [
+  {
+    image: '/build/client/images/banner.png',
+    alt: 'Banner 1',
+    tag: 'Descontos Incríveis!',
+    text: '<ul><li>Sou íntimo</li><li>Recomendado para homens e mulheres</li><li>Super Concentrado</li></ul>',
   },
-  methods: {
-    increaseQuantity(product) {
-      product.quantity++;
-    },
-    decreaseQuantity(product) {
-      if (product.quantity > 1) product.quantity--;
-    },
-    addToCart(product) {
-      alert(`Adicionado ${product.quantity} ${product.name}(s) ao carrinho!`);
-    },
+  {
+    image: 'https://via.placeholder.com/1200x400/7fbfff/333333?text=Banner+2',
+    alt: 'Banner 2',
+    tag: 'Descontos Incríveis!',
+    text: 'Texto do Banner 2',
   },
-};
+  {
+    image: 'https://via.placeholder.com/1200x400/ffb84d/333333?text=Banner+3',
+    alt: 'Banner 3',
+    tag: 'Novo Lançamento!',
+    text: 'Texto do Banner 3',
+  },
+];
+
+// Controla o slide atual
+const currentSlide = ref(0);
 </script>
 
-
 <style scoped>
-.product-box {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  text-align: center;
-  background: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-}
+    .montagu-slab {
+        font-family: "Montagu Slab", serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
 
-.discount {
-  background: red;
-  color: #fff;
-  padding: 4px 8px;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  border-radius: 4px;
-  font-size: 12px;
-}
-
-.product-image {
-  width: 100%;
-  height: auto;
-  margin-bottom: 8px;
-  border-radius: 8px;
-}
-
-h3 {
-  font-size: 18px;
-  margin: 8px 0;
-}
-
-.description {
-  font-size: 14px;
-  color: #666;
-}
-
-.price-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin: 8px 0;
-}
-
-.old-price {
-  text-decoration: line-through;
-  color: #999;
-}
-
-.new-price {
-  color: red;
-  font-weight: bold;
-}
-
-.timer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 8px 0;
-  font-size: 14px;
-  color: #666;
-}
-
-.quantity-controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin: 16px 0;
-}
-
-.quantity-controls button {
-  background: #ddd;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 8px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.action-button {
-  background: orange;
-  color: #fff;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.action-button:hover {
-  background: darkorange;
-}
+    .box-product .image::before{
+      content: '';
+      background-color: rgba(195, 228, 206, 0.4);
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
 </style>

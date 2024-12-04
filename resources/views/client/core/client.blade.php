@@ -33,6 +33,20 @@
             border-radius: 50% !important;
             background-color: #F2F7DE !important;
         }
+        .pagination__product .carousel__pagination-button::after {
+            width: 10px !important;
+            height: 10px !important;
+            border-radius: 50% !important;
+            background-color: #F6FEFB !important;
+            border: 1px solid #419263 !important;
+        }
+        .pagination__product .carousel__pagination-button--active::after {
+            width: 12px !important;
+            height: 12px !important;
+            border-radius: 50% !important;
+            background-color: #2FB25E !important;
+            border: 1px solid #419263 !important;
+        }
   </style>
 </body>
 </html>

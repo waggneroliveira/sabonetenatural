@@ -5,10 +5,10 @@
         <slide v-for="(banner, index) in banners" :key="index">
           <img :src="banner.image" :alt="banner.alt" class="w-full h-full object-cover" />
           <div class="description absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 text-left w-[90%] max-w-[1140px] h-full max-h-[333px] flex flex-col items-start justify-start gap-[100px] leading-[52px]">
-            <h1 class="montagu-slab text-white font-normal text-xl text-[52px]">
+            <h1 class="montagu-slab text-white font-normal text-[52px]">
               {{ banner.title }}
             </h1>
-            <p class="montagu-slab text-white font-normal text-xl text-[28px] leading-[45px] max-w-[475px]">
+            <p class="montagu-slab text-white font-normal text-[28px] leading-[45px] max-w-[475px]">
               {{ banner.text }}
             </p>
           </div>
