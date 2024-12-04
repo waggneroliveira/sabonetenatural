@@ -8,7 +8,7 @@
   
     .description ul li {
       position: relative;
-      padding-left: 20px; 
+      padding-left: 10px; 
     }
   
     .description ul li::before {
