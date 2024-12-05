@@ -13,8 +13,10 @@
         <div class="box-filter__second">
             <div class="box-filter__second-category">
                 <nav>
-                    <ul class="">
-                        <li class="border-[rgba(65, 146, 99, 1)]"><a href="" v-for="(item, index) in items" :key="index" class="text-[rgba(65, 146, 99, 1)] text-[0.813rem] montagu-slab">{{ item.title }}</a></li>
+                    <ul class="flex gap-[2.875rem]">
+                        <li class=" border-[1px] border-solid border-[#419263]" v-for="(item, index) in items" :key="index">
+                            <a href="" class="text-[#419263] text-[0.813rem] montagu-slab">{{ item.title }}</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
