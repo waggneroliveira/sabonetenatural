@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-red-100">
+<body class="bg-white">
     <main>
         <div id="app">
             <header-component></header-component>  

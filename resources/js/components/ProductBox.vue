@@ -52,21 +52,3 @@ const slides = [
 const currentSlide = ref(0);
 </script>
 
-<style scoped>
-    .montagu-slab {
-        font-family: "Montagu Slab", serif;
-        font-optical-sizing: auto;
-        font-style: normal;
-    }
-
-    .box-product .image::before{
-      content: '';
-      background-color: rgba(195, 228, 206, 0.4);
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-    }
-</style>

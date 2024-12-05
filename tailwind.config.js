@@ -33,6 +33,10 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            backgroundImage: {
+                'inner-banner': "url('/build/client/images/inner-banner.png')", // Banner interno dos produtos
+                'firula-inner-banner': "url('/build/client/images/firula-inner-banner.png')", // Firula Banner interno dos produtos
+            },
         },
     },
     plugins: [],

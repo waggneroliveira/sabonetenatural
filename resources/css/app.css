@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* START PRODUCTS */
+.description ul {
+    list-style: none; 
+    padding-left: 0;  
+}
+
+.description ul li {
+    position: relative;
+    padding-left: 10px; 
+}
+
+.description ul li::before {
+    content: '•'; 
+    position: absolute;
+    left: 0; 
+    top: 0; 
+    font-size: 12px; 
+    color: #2FB25E; 
+}
+.montagu-slab {
+    font-family: "Montagu Slab", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.box-product .image::before{
+  content: '';
+  background-color: rgba(195, 228, 206, 0.4);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+/* END PRODUCTS */

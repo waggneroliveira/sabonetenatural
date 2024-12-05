@@ -10,4 +10,6 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('client.blades.home');
 });
-
+Route::get('produtos', function(){
+    return view('client.blades.products');
+});
